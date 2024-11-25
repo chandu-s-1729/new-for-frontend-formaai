@@ -15,7 +15,7 @@ const Header = props => {
       <div className="nav-content">
         <img
           className="website-logo"
-          src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
+          src="https://res.cloudinary.com/dgwihcnkh/image/upload/v1732530286/FormaAI-images/formaailogoshort_s7a3bz.png"
           alt="website logo"
         />
         <ul className="nav-menu">

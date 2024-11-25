@@ -43,7 +43,9 @@ class AllProductsSection extends Component {
     const {productsList} = this.state
     return (
       <div>
-        <h1 className="products-list-heading">All Products</h1>
+        <h1 className="products-list-heading">
+          Personal AI Suggest Schedule ONLY FOR YOU
+        </h1>
         <h1>Chandu Kalisetti</h1>
 
         {/* <ul className="products-list">

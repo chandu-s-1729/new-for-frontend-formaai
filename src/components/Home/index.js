@@ -8,7 +8,7 @@ const Home = () => (
       <div className="home-content">
         <h1 className="home-heading">FormaAI it Shapes your Lifestyle</h1>
         <img
-          src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-home-img.png"
+          src="https://res.cloudinary.com/dgwihcnkh/image/upload/v1732530035/FormaAI-images/fitnessatbanner_oob3ra.png"
           alt="dresses to be noticed"
           className="home-mobile-img"
         />
@@ -24,7 +24,7 @@ const Home = () => (
         </button>
       </div>
       <img
-        src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-home-img.png"
+        src="https://res.cloudinary.com/dgwihcnkh/image/upload/v1732530035/FormaAI-images/fitnessatbanner_oob3ra.png"
         alt="dresses to be noticed"
         className="home-desktop-img"
       />
