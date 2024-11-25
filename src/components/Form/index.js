@@ -1,10 +1,10 @@
-// import Cookies from 'js-cookie'
+import Cookies from 'js-cookie'
 // import {Redirect} from 'react-router-dom'
 import {Component} from 'react'
 import Header from '../Header'
 import './index.css'
 
-class Cart extends Component {
+class Form extends Component {
   state = {
     age: '',
     gender: '',
@@ -16,57 +16,62 @@ class Cart extends Component {
     level: '',
   }
 
-  //   onSubmitSuccess = jwtToken => {
-  //     const {history} = this.props
+  onSubmitSuccess = () => {
+    const {history} = this.props
 
-  //     Cookies.set('jwt_token', jwtToken, {
-  //       expires: 30,
-  //       path: '/',
-  //     })
-  //     history.replace('/')
-  //   }
+    //   Cookies.set('jwt_token', jwtToken, {
+    //     expires: 30,
+    //     path: '/',
+    //   })
+    history.replace('/schedule')
+  }
 
-  //   onSubmitFailure = errorMsg => {
-  //     console.log(errorMsg)
-  //     this.setState({showSubmitError: true, errorMsg})
-  //   }
+  onSubmitFailure = errorMsg => {
+    console.log(errorMsg)
+  }
 
-  //   submitForm = async event => {
-  //     event.preventDefault()
-  //     const {
-  //       age,
-  //       gender,
-  //       weight,
-  //       height,
-  //       goal,
-  //       dietary,
-  //       workoutTime,
-  //       level,
-  //     } = this.state
-  //     const userDetails = {
-  //       age,
-  //       gender,
-  //       weight,
-  //       height,
-  //       goal,
-  //       dietary,
-  //       workoutTime,
-  //       level,
-  //     }
-  //     const url = 'https://apis.ccbp.in/login'
-  //     const options = {
-  //       method: 'POST',
-  //       body: JSON.stringify(userDetails),
-  //     }
-  //     const response = await fetch(url, options)
-  //     const data = await response.json()
-  //     console.log(data)
-  //     if (response.ok === true) {
-  //       this.onSubmitSuccess(data.jwt_token)
-  //     } else {
-  //       this.onSubmitFailure(data.error_msg)
-  //     }
-  //   }
+  submitForm = async event => {
+    event.preventDefault()
+    const {
+      age,
+      gender,
+      weight,
+      height,
+      goal,
+      dietary,
+      workoutTime,
+      level,
+    } = this.state
+    const userDetails = {
+      age,
+      gender,
+      weight,
+      height,
+      goal,
+      dietary,
+      workoutTime,
+      level,
+    }
+
+    const jwtToken = Cookies.get('jwt_token')
+    const options = {
+      headers: {
+        Authorization: `Bearer ${jwtToken}`,
+      },
+      //   "Content-Type": "application/json"
+      method: 'POST',
+      body: JSON.stringify(userDetails),
+    }
+    const url = ''
+    const response = await fetch(url, options)
+    const data = await response.json()
+    console.log(data)
+    if (response.ok === true) {
+      this.onSubmitSuccess()
+    } else {
+      this.onSubmitFailure(data.error_msg)
+    }
+  }
 
   onChangeAge = event => {
     this.setState({age: event.target.value})
@@ -337,4 +342,4 @@ class Cart extends Component {
   }
 }
 
-export default Cart
+export default Form

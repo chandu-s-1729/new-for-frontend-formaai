@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom'
 import Header from '../Header'
 import './index.css'
 
@@ -19,9 +20,11 @@ const Home = () => (
           including tasks, meals, and reminders. Stay organized and balanced
           effortlessly with AI-guided recommendations!
         </p>
-        <button type="button" className="shop-now-button">
-          Fill the Details
-        </button>
+        <Link to="/form">
+          <button type="button" className="shop-now-button">
+            Fill the Details
+          </button>
+        </Link>
       </div>
       <img
         src="https://res.cloudinary.com/dgwihcnkh/image/upload/v1732530035/FormaAI-images/fitnessatbanner_oob3ra.png"

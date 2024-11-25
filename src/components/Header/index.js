@@ -22,10 +22,10 @@ const Header = props => {
           <Link to="/" className="nav-link">
             <li>Home</li>
           </Link>
-          <Link to="/cart" className="nav-link">
+          <Link to="/form" className="nav-link">
             <li>Form</li>
           </Link>
-          <Link to="/products" className="nav-link">
+          <Link to="/schedule" className="nav-link">
             <li>Schedule</li>
           </Link>
         </ul>
